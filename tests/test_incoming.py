@@ -22,7 +22,7 @@ def override_db():
 app.dependency_overrides[get_db] = override_db
 
 db = TestSession()
-now = datetime.utcnow()
+now = datetime.now()
 db.add_all([Hospital(id=1, name="A"), Hospital(id=2, name="B")])
 db.add_all([
     Booking(id=1, booking_code="T1", hospital_id=1, emergency_type="Cardiac",

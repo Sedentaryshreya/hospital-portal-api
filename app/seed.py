@@ -6,7 +6,7 @@ def seed():
     Base.metadata.create_all(bind=engine)
     db = SessionLocal()
     if db.query(Hospital).count() == 0:
-        now = datetime.utcnow()
+        now = datetime.now()
         db.add_all([Hospital(id=1, name="Test Hospital A"),
                     Hospital(id=2, name="Test Hospital B")])
         db.add_all([
